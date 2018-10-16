@@ -35,7 +35,7 @@ shuffleDeck();
 console.log(deck);
 
 // Step 3a - Create an array to store 2 players
-let players = ["Player 1", "Playe 2"];
+let players = ["Player 1", "Player 2"];
 let playerScore = [0, 0];
 // Step 3b - Create a variable to store the current player
 let currentPlayer = 0;
