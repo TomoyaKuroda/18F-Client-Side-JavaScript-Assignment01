@@ -65,8 +65,8 @@ bindClickEvent();
 // Step 5 - Create a function to store the logic
 // for when a card is selected
 function cardSelected(event) {
-  console.log(event.target.dataset.value);
-  console.log(event.target.classList.contains("cardSelected"));
+  // console.log(event.target.dataset.value);
+  // console.log(event.target.classList.contains("cardSelected"));
   //Step 5a - Check if there is already a card selected
   if (currentCard !== "") {
     // Step 6 - Compare the cards
@@ -87,7 +87,7 @@ function cardSelected(event) {
       score.textContent = `${players[currentPlayer]} has ${
         playerScore[currentPlayer]
       }`;
-      console.log(playerScore[currentPlayer]);
+      //console.log(playerScore[currentPlayer]);
       // Step 6d - Tell the player to go again
       // (use string interpolation to show which player you're addressing)
       message.textContent = `Congratulations! ${
