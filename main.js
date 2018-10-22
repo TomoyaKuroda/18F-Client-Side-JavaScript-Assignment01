@@ -54,7 +54,7 @@ function bindClickEvent() {
 
     // Step 3c - Add a data value to the card with the card's value in it
     cardEle.dataset.value = deck[i];
-    cardEle.textContent = deck[i];
+    //cardEle.textContent = deck[i];
     // Step 3c - Bind the cardSelected function
     // to the click event on the cardEle
     cardEle.onclick = cardSelected;
@@ -77,9 +77,11 @@ function cardSelected(event) {
       // Step 6b - Add a class to the 2 card elements
       // flipping them over
       let previousCard = document.querySelector(".cardSelected");
+      previousCard.textContent=""
       previousCard.classList.add("flipped");
       previousCard.classList.remove("cardSelected");
       event.target.classList.add("flipped");
+      event.target.textContent=""
       //event.target.classList.add("flipped");
 
       // Step 6c - Add a point to the score for this player
@@ -97,10 +99,14 @@ function cardSelected(event) {
     } else {
       // Step 6e - Provide a fail message to the player
       message.textContent = "Oh, so sorry!!! But yer' not psychic!";
-
       // Step 6f - Using a ternary, change players
       currentPlayer = currentPlayer === 0 ? 1 : 0;
       let previousCard = document.querySelector(".cardSelected");
+            event.target.textContent=event.target.dataset.value
+      setTimeout(function(){
+        event.target.textContent=""
+        previousCard.textContent=""
+      }, 1000)
       previousCard.classList.remove("cardSelected");
       // Step 6g - Concatenate a message to the message element
       // advising player 2 that it's their turn now
@@ -112,6 +118,7 @@ function cardSelected(event) {
     // Step 5b - Assign the card to currentCard
     currentCard = event.target.dataset.value;
     event.target.classList.add("cardSelected");
+    event.target.textContent=currentCard;
     // Step 5c - Tell the player to select another card
     // (use string interpolation to show which player you're addressing)
     message.textContent = `${
