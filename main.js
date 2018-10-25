@@ -79,8 +79,10 @@ function cardSelected(event) {
       let previousCard = document.querySelector(".cardSelected");
       previousCard.textContent=""
       previousCard.classList.add("flipped");
+      previousCard.onclick=null;
       previousCard.classList.remove("cardSelected");
       event.target.classList.add("flipped");
+      event.target.onclick=null;
       event.target.textContent=""
       //event.target.classList.add("flipped");
 
